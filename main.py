@@ -7,10 +7,17 @@ def is_senior_citizen(senior_id):
     else:
         return False
 
-#TODO: Implement a function that totals the price of the items in the products 
-# list.
-# MUST Take into account the senior citizen discount
-# Assigned to: Dazo, Rollan
+def get_grand_total(products, senior_id_no):
+    grand_total = 0
+
+    for product in products:
+        grand_total += product[3]  
+    
+    is_senior_citizen = senior_id_no != ""  
+    if is_senior_citizen:
+        grand_total *= 0.90  
+    
+    return grand_total 
 
 #TODO: Implement a function that displays the the following details:
 # - Items(product name, price, quantity, total)

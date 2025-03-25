@@ -1,8 +1,11 @@
 #TODO: Implement a function that adds an item to a products list
 # Assigned to: Agulto, Jermaine Razehl
 
-#TODO: Implement a function that checks if the customer is a senior citizen
-# Assigned to: Jundam, Kyle
+def is_senior_citizen(senior_id):
+    if senior_id.isdigit() == True:
+        return True
+    else:
+        return False
 
 #TODO: Implement a function that totals the price of the items in the products 
 # list.
@@ -38,5 +41,8 @@ def main():
         # Checks if the user entered 'n'(no)
         if is_add_more == 'n':
             break
+    
+    customer_name = input("ENTER CUSTOMER NAME: ")
+    senior_id_no = input("ENTER YOUR SENIOR ID NUMBER (LEAVE BLANK IF N/A): ")
 
 main()

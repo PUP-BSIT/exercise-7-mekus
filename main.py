@@ -16,7 +16,27 @@
 # - Grand Total
 # Assigned to: Olazo, John Albert
 
-#TODO: Implement the main function that will call the functions above and
-# will hold the main logic of the program
-# Assigned to: Serohijos, Joshua
-#              Jundam, Kyle
+def main():
+    # Initialize products list
+    products = []
+
+    # Loop to keep adding products
+    while True:
+        # Prompt user for product details
+        product_name = input("ENTER PRODUCT NAME: ")
+        product_price = float(input("ENTER PRODUCT PRICE: "))
+        product_quantity = int(input("ENTER PRODUCT QUANTITY: "))
+
+        # Loop to validate user input ('y' or 'n')
+        while True:
+            is_add_more = input("DO YOU WISH TO ADD MORE? (y/n): ").lower()
+            if is_add_more == 'y' or is_add_more == 'n':
+                break
+
+            print("INVALID INPUT. PLEASE ENTER ('y' or 'n').")
+
+        # Checks if the user entered 'n'(no)
+        if is_add_more == 'n':
+            break
+
+main()

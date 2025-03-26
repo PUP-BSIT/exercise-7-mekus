@@ -48,5 +48,7 @@ def main():
     
     customer_name = input("ENTER CUSTOMER NAME: ")
     senior_id_no = input("ENTER YOUR SENIOR ID NUMBER (LEAVE BLANK IF N/A): ")
+    
+    is_senior = is_senior_citizen(senior_id_no)
 
 main()

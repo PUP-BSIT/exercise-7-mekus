@@ -35,7 +35,12 @@ def main():
         product_name = input("ENTER PRODUCT NAME: ")
         product_price = float(input("ENTER PRODUCT PRICE: "))
         product_quantity = int(input("ENTER PRODUCT QUANTITY: "))
-        
+
+        add_to_products(products, 
+                        product_name, 
+                        product_price, 
+                        product_quantity)
+
         # Loop to validate user input ('y' or 'n')
         while True:
             is_add_more = input("DO YOU WISH TO ADD MORE? (y/n): ").lower()

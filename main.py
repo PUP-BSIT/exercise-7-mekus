@@ -1,5 +1,7 @@
-#TODO: Implement a function that adds an item to a products list
-# Assigned to: Agulto, Jermaine Razehl
+def add_to_products(products,product_name, price, quantity):
+    total = price * quantity
+    product = [product_name, price, quantity, total]
+    products.append(product)
 
 def is_senior_citizen(senior_id):
     return senior_id == ""
@@ -33,7 +35,7 @@ def main():
         product_name = input("ENTER PRODUCT NAME: ")
         product_price = float(input("ENTER PRODUCT PRICE: "))
         product_quantity = int(input("ENTER PRODUCT QUANTITY: "))
-
+        
         # Loop to validate user input ('y' or 'n')
         while True:
             is_add_more = input("DO YOU WISH TO ADD MORE? (y/n): ").lower()

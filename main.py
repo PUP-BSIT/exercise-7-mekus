@@ -72,18 +72,15 @@ def main():
     # Prompt user for customer name
     customer_name = input("ENTER CUSTOMER NAME: ")
 
-    # Loop to validate senior ID input (blank, numeric, and within length range)
+    # Loop to validate senior ID input (blank or numeric)
     while True:
         senior_id_no = input(
             "ENTER YOUR SENIOR ID NUMBER (LEAVE BLANK IF N/A): "
         )
-        if (senior_id_no == "" 
-                or senior_id_no.isdigit() 
-                and len(senior_id_no) > 9 
-                and len(senior_id_no) < 13):
+        if senior_id_no == "" or senior_id_no.isdigit():
             break
 
-        print("INVALID INPUT. PLEASE ENTER 10-12 DIGITS OR LEAVE IT BLANK.")
+        print("INVALID INPUT. MUST BE BLANK OR NUMERIC.")
 
     # Determine if the customer is a senior citizen
     is_senior = is_senior_citizen(senior_id_no)

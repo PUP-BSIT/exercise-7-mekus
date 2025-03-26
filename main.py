@@ -6,14 +6,13 @@ def add_to_products(products,product_name, price, quantity):
 def is_senior_citizen(senior_id):
     return senior_id == ""
 
-def get_grand_total(products, senior_id_no):
+def get_grand_total(products, is_senior):
     grand_total = 0
 
     for product in products:
         grand_total += product[3]  
-    
-    is_senior_citizen = senior_id_no != ""  
-    if is_senior_citizen:
+     
+    if is_senior:
         grand_total *= 0.90  
     
     return grand_total 

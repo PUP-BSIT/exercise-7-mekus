@@ -2,10 +2,7 @@
 # Assigned to: Agulto, Jermaine Razehl
 
 def is_senior_citizen(senior_id):
-    if senior_id.isdigit() == True:
-        return True
-    else:
-        return False
+    return senior_id == ""
 
 def get_grand_total(products, senior_id_no):
     grand_total = 0

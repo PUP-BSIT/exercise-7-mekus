@@ -1,4 +1,4 @@
-def add_to_products(products,product_name, price, quantity):
+def add_to_products(products, product_name, price, quantity):
     total = price * quantity  # Compute the total price of the product
     product = [product_name, price, quantity, total]  # Store product details 
     products.append(product)  # Add product to the products list

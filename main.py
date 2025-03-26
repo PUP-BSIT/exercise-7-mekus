@@ -84,4 +84,6 @@ def main():
     is_senior = is_senior_citizen(senior_id_no)
     grand_total = get_grand_total(products, is_senior)
     
+    display_details(products, customer_name, senior_id_no, grand_total)
+    
 main()

@@ -68,5 +68,6 @@ def main():
         print("INVALID INPUT. PLEASE ENTER 10-12 DIGITS OR LEAVE IT BLANK.")
 
     is_senior = is_senior_citizen(senior_id_no)
-
+    grand_total = get_grand_total(products, is_senior)
+    
 main()

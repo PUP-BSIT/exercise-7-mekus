@@ -38,7 +38,6 @@ def display_details(products, customer_name, senior_id, grand_total):
     
     # Display the grand total amount
     print(f"GRAND TOTAL: {grand_total:.2f}")
-    print("\n")
 
 def main():
     # Initialize products list

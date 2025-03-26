@@ -1,24 +1,26 @@
 def add_to_products(products,product_name, price, quantity):
-    total = price * quantity
-    product = [product_name, price, quantity, total]
-    products.append(product)
+    total = price * quantity  # Compute the total price of the product
+    product = [product_name, price, quantity, total]  # Store product details 
+    products.append(product)  # Add product to the products list
 
 def is_senior_citizen(senior_id):
-    return senior_id != ""
+    return senior_id != ""  # Check if senior_id is not empty
 
 def get_grand_total(products, is_senior):
-    grand_total = 0
+    grand_total = 0  # Initialize the grand total to 0
 
+    # Sum up the total price of all products
     for product in products:
         grand_total += product[3]  
      
+    # Apply 10% discount if customer is a senior citizen
     if is_senior:
         grand_total *= 0.90  
     
-    return grand_total 
+    return grand_total  # Return the grand total
 
 def display_details(products, customer_name, senior_id, grand_total):
-    # Check if senior_id is empty
+    # Check if senior_id is empty, if so, set it to "N/A"
     if not is_senior_citizen(senior_id):
         senior_id = "N/A"
     
@@ -34,7 +36,7 @@ def display_details(products, customer_name, senior_id, grand_total):
     print(f"\nCUSTOMER NAME: {customer_name}")
     print(f"SENIOR ID NO.: {senior_id}")
     
-    # Display the grand total
+    # Display the grand total amount
     print(f"GRAND TOTAL: {grand_total:.2f}")
     print("\n")
 
@@ -49,6 +51,7 @@ def main():
         product_price = float(input("ENTER PRODUCT PRICE: "))
         product_quantity = int(input("ENTER PRODUCT QUANTITY: "))
 
+        # Add product details to the products list
         add_to_products(products, 
                         product_name, 
                         product_price, 
@@ -66,9 +69,10 @@ def main():
         if is_add_more == 'n':
             break
     
+    # Prompt user for customer name
     customer_name = input("ENTER CUSTOMER NAME: ")
 
-    # Loop to validate user input (blank, number, or invalid input)
+    # Loop to validate senior ID input (blank, numeric, and within length range)
     while True:
         senior_id_no = input(
             "ENTER YOUR SENIOR ID NUMBER (LEAVE BLANK IF N/A): "
@@ -81,9 +85,14 @@ def main():
 
         print("INVALID INPUT. PLEASE ENTER 10-12 DIGITS OR LEAVE IT BLANK.")
 
+    # Determine if the customer is a senior citizen
     is_senior = is_senior_citizen(senior_id_no)
+    
+    # Get the grand total amount
     grand_total = get_grand_total(products, is_senior)
     
+    # Display the details of the products and customer
     display_details(products, customer_name, senior_id_no, grand_total)
     
+# Execute the main function
 main()

@@ -28,7 +28,7 @@ def display_details(products, customer_name, senior_id, grand_total):
     print("\nLIST OF ITEMS:")
     for counter, product in enumerate(products):
         print(
-            f"{counter + 1}. {product[0]}, {product[1]:.2f},"
+            f"{counter + 1}. {product[0]}, {product[1]:.2f}, "
             f"{product[2]}, {product[3]:.2f}"
         )
 

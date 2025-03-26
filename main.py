@@ -17,12 +17,26 @@ def get_grand_total(products, is_senior):
     
     return grand_total 
 
-#TODO: Implement a function that displays the the following details:
-# - Items(product name, price, quantity, total)
-# - Customer Name
-# - Senior ID no.
-# - Grand Total
-# Assigned to: Olazo, John Albert
+def display_details(products, customer_name, senior_id, grand_total):
+    # Check if senior_id is empty
+    if not is_senior_citizen(senior_id):
+        senior_id = "N/A"
+    
+    # Display the listed products
+    print("\nLIST OF ITEMS:")
+    for counter, product in enumerate(products):
+        print(
+            f"{counter + 1}. {product[0]}, {product[1]:.2f},"
+            f"{product[2]}, {product[3]:.2f}"
+        )
+
+    # Display the customer details
+    print(f"\nCUSTOMER NAME: {customer_name}")
+    print(f"SENIOR ID NO.: {senior_id}")
+    
+    # Display the grand total
+    print(f"GRAND TOTAL: {grand_total:.2f}")
+    print("\n")
 
 def main():
     # Initialize products list

@@ -4,7 +4,7 @@ def add_to_products(products,product_name, price, quantity):
     products.append(product)
 
 def is_senior_citizen(senior_id):
-    return senior_id == ""
+    return senior_id != ""
 
 def get_grand_total(products, is_senior):
     grand_total = 0

@@ -47,8 +47,20 @@ def main():
             break
     
     customer_name = input("ENTER CUSTOMER NAME: ")
-    senior_id_no = input("ENTER YOUR SENIOR ID NUMBER (LEAVE BLANK IF N/A): ")
-    
+
+    # Loop to validate user input (blank, number, or invalid input)
+    while True:
+        senior_id_no = input(
+            "ENTER YOUR SENIOR ID NUMBER (LEAVE BLANK IF N/A): "
+        )
+        if (senior_id_no == "" 
+                or senior_id_no.isdigit() 
+                and len(senior_id_no) > 9 
+                and len(senior_id_no) < 13):
+            break
+
+        print("INVALID INPUT. PLEASE ENTER 10-12 DIGITS OR LEAVE IT BLANK.")
+
     is_senior = is_senior_citizen(senior_id_no)
 
 main()
